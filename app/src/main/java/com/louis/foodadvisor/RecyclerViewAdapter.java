@@ -1,27 +1,32 @@
 package com.louis.foodadvisor;
 
 import android.content.Context;
+import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.louis.foodadvisor.Model.ShopInfo;
+import com.squareup.picasso.Picasso;
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.util.List;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    String data1[], data2[], data3[];
-    int images[];
+    List<ShopInfo> shops;
     Context context;
 
-    public RecyclerViewAdapter(Context ct, String s1[], String s2[], String s3[], int img[]){
+    public RecyclerViewAdapter(Context ct, List<ShopInfo> data){
         context = ct;
-        data1 = s1;
-        data2 = s2;
-        data3 = s3;
-        images = img;
+        shops = data;
     }
 
     @NonNull
@@ -34,30 +39,37 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.mytext1.setText(data1[position]);
-        holder.mytext2.setText(data2[position]);
-        holder.mytext3.setText(data3[position]);
-        holder.myImage.setImageResource(images[position]);
-    }
+
+        new DownloadImageTask(holder.imgShop)
+                .execute(shops.get(position).getShopPhoto());
+
+        holder.txtShopDistance.setText(shops.get(position).getShopDistance() + "m");
+
+        holder.txtShopName.setText(shops.get(position).getShopName());
+        holder.txtShopAddress.setText(shops.get(position).getShopAddress());
+        holder.txtShopCategory.setText(shops.get(position).getShopCategory());
+}
 
     @Override
     public int getItemCount() {
-        return data1.length;
+        return shops.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView mytext1, mytext2, mytext3;
-        ImageView myImage;
+        TextView txtShopName, txtShopAddress, txtShopCategory, txtShopDistance;
+        ImageView imgShop;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            mytext1 = itemView.findViewById(R.id.txt_shop_name);
-            mytext2 = itemView.findViewById(R.id.txt_shop_address);
-            mytext3 = itemView.findViewById(R.id.txt_shop_category);
-            myImage = itemView.findViewById(R.id.img_shop);
+            txtShopName = itemView.findViewById(R.id.txt_shop_name);
+            txtShopAddress = itemView.findViewById(R.id.txt_shop_address);
+            txtShopCategory = itemView.findViewById(R.id.txt_shop_category);
+            txtShopDistance = itemView.findViewById(R.id.txt_shop_distance);
+            imgShop = itemView.findViewById(R.id.img_shop);
         }
     }
+
 
 }

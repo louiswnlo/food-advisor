@@ -25,10 +25,10 @@
 
             <ImageView
                 android:id="@+id/img_shop"
-                android:src="@drawable/img_shop_2"
-                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_shop_1"
                 android:layout_margin="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="80dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

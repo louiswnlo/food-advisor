@@ -13,7 +13,6 @@
         android:textStyle="bold"
         android:textColor="#fff"
         android:padding="18dp"
-
         android:background="#FEBF6E"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
