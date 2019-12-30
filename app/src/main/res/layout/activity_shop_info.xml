@@ -13,7 +13,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -35,7 +34,7 @@
 
             <ImageView
                 android:id="@+id/img_shop"
-                android:src="@drawable/img_shop_1"
+                android:src="#fff"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
@@ -55,8 +54,8 @@
                     android:layout_centerVertical="true"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:stepSize="0.1"
-                    android:rating="4.5"
+                    android:stepSize="0.5"
+                    android:rating="0"
                     android:progressTint="#ffea61"
                     />
 
@@ -79,10 +78,90 @@
                 android:background="?android:attr/listDivider" />
 
             <LinearLayout
+                android:id="@+id/layout_category"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_shop_name"
+                app:layout_constraintStart_toStartOf="@+id/txt_shop_name">
+
+                <ImageView
+                    android:id="@+id/icon_eat"
+                    android:src="@drawable/icon_eat"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:text="菜式"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_shop_category"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="日本菜"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/layout_price"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_shop_name"
+                app:layout_constraintStart_toStartOf="@+id/txt_shop_name">
+
+                <ImageView
+                    android:id="@+id/icon_price"
+                    android:src="@drawable/icon_coin"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:text="人均消費"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_shop_price"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="$100 - 200"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
                 android:id="@+id/layout_time"
                 android:weightSum="2"
                 android:orientation="horizontal"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
@@ -92,7 +171,7 @@
 
                 <ImageView
                     android:id="@+id/icon_time"
-                    android:src="@drawable/icon_map"
+                    android:src="@drawable/icon_clock"
                     android:layout_marginRight="10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
@@ -100,9 +179,9 @@
                     android:layout_height="20dp" />
 
                 <TextView
-                    android:id="@+id/txt_time_display"
                     android:text="營業時間"
                     android:textSize="15sp"
+                    android:textStyle="bold"
                     android:maxLines="1"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
@@ -110,11 +189,19 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/txt_time"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="10:00 - 12:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
             <LinearLayout
                 android:id="@+id/layout_map"
-                android:weightSum="2"
+                android:weightSum="3"
                 android:orientation="horizontal"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
@@ -132,19 +219,53 @@
                     android:layout_height="20dp" />
 
                 <TextView
-                    android:id="@+id/txt_shop_address"
                     android:text="地址"
                     android:textSize="15sp"
+                    android:textStyle="bold"
                     android:maxLines="1"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
+                <TextView
+                    android:text="按下方地址開啓Google Map"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_shop_address"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="西環皇后大道西532號地下A號舖"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/rate_btn"
+                android:text="對此餐廳評分"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:background="@drawable/round_btn"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
     </ScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

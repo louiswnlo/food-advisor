@@ -103,8 +103,6 @@ public class StartActivity extends AppCompatActivity {
                                         .putString("longtitude", String.valueOf(longtitude))
                                         .apply();
 
-                                System.out.println("HERE = " + latitude);
-
                                 Intent intent = new Intent(StartActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();

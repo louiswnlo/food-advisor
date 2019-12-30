@@ -68,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
             String userLocationLong = "0.00";
             userLocationLong = pref.getString("longtitude", "");
 
-            System.out.println("HERE = " + userLocationLat);
-
             Location userLocation = new Location("userLocation");
             userLocation.setLatitude(Double.valueOf(userLocationLat));
             userLocation.setLongitude(Double.valueOf(userLocationLong));
@@ -85,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
             shop.setShopDistance(result.intValue());
 
-            if(shop.getShopDistance() <= 1000){
+            if(shop.getShopDistance() <= 2000){
                 shoplist.add(shop);
             }
         }

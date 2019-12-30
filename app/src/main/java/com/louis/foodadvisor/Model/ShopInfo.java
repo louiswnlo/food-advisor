@@ -12,8 +12,9 @@ public class ShopInfo {
     private String shopStartTime;
     private String shopEndTime;
     private String shopPrice;
-
     private Integer shopDistance;
+    private Float shopAverageRating;
+    private Integer shopNumOfRating;
 
     public ShopInfo(Integer shopID, String shopName, String shopPhoto, String shopAddress, Double shopAddressLat, Double shopAddressLong, String shopCategory, String shopStartTime, String shopEndTime, String shopPrice) {
         this.shopID = shopID;
@@ -27,6 +28,8 @@ public class ShopInfo {
         this.shopEndTime = shopEndTime;
         this.shopPrice = shopPrice;
         this.shopDistance = 0;
+        this.shopAverageRating = 0f;
+        this.shopNumOfRating = 0;
     }
 
     public Integer getShopID() {
@@ -115,5 +118,21 @@ public class ShopInfo {
 
     public void setShopDistance(Integer shopDistance) {
         this.shopDistance = shopDistance;
+    }
+
+    public Float getShopAverageRating() {
+        return shopAverageRating;
+    }
+
+    public void setShopAverageRating(Float shopAverageRating) {
+        this.shopAverageRating = shopAverageRating;
+    }
+
+    public Integer getShopNumOfRating() {
+        return shopNumOfRating;
+    }
+
+    public void setShopNumOfRating(Integer shopNumOfRating) {
+        this.shopNumOfRating = shopNumOfRating;
     }
 }
