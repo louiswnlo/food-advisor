@@ -1,3 +1,44 @@
 <resources>
     <string name="app_name">FoodAdvisor</string>
+
+    <string-array name="test_shop_name">
+        <item>活一鮮</item>
+        <item>美味聯盟</item>
+        <item>松記糖水店</item>
+        <item>ARF Cafe</item>
+        <item>彩aya</item>
+        <item>Dear Neighbor</item>
+        <item>Dreamer Cafe</item>
+        <item>萬家廚房</item>
+        <item>All Blue Coffee</item>
+        <item>半糖主義</item>
+    </string-array>
+
+    <string-array name="test_shop_address">
+        <item>西環石塘咀皇后大道西503號地下</item>
+        <item>西環皇后大道西532號地下A號舖</item>
+        <item>西環石塘咀皇后大道西522-530號再發大廈地下4號舖</item>
+        <item>西環石塘咀保德街23號地下</item>
+        <item>西環石塘咀屈地街16號金陵大廈地舖</item>
+        <item>西環石塘咀保德街9-15號仁愛苑地舖</item>
+        <item>西環保德街6-20號保基大廈地下5號舖</item>
+        <item>西環堅尼地城卑路乍街124號聯基新樓地下M號舖</item>
+        <item>西環石塘咀中西區海濱長廊</item>
+        <item>西環堅尼地城北街11號地舖</item>
+    </string-array>
+
+    <string-array name="test_shop_category">
+        <item>日本菜</item>
+        <item>小食店</item>
+        <item>甜品</item>
+        <item>西式</item>
+        <item>日本菜</item>
+        <item>西式</item>
+        <item>西式</item>
+        <item>日本菜</item>
+        <item>西式</item>
+        <item>甜品</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
 </resources>
